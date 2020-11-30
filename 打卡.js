@@ -22,10 +22,12 @@ Date.prototype.Format = function (fmt) { // author: meizz
     return fmt;
 }
 // nowDate 例 2020-11-30
-var nowDate = new Date().Format("yyyy-MM-dd")
+const nowDate = new Date().Format("yyyy-MM-dd");
 
 
 const axios = require('axios');
+
+let result;
 axios({
     method: 'post',
     url: 'https://bpa.lypt.edu.cn/xgh5/openData',
@@ -71,7 +73,28 @@ axios({
 
     }
 }).then(value => {
+    result = value.data
     console.log(value.data)
+    pushInfo();
 }).catch(reason => {
+    result = reason
     console.log(reason)
+    pushInfo();
+
 })
+
+function pushInfo() {
+    axios({
+        method: 'post',
+        url: 'https://sc.ftqq.com/SCU51861T9b1350506cfcf9586f40e00252b66ceb5ce174da23773.send',
+        params: {
+            text: '打卡信息',
+            desp: result
+        }
+    }).then(value => {
+        console.log('推送成功')
+    }).catch(reason => {
+        console.log('推送失败')
+    })
+
+}
