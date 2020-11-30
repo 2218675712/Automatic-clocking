@@ -72,4 +72,6 @@ axios({
     }
 }).then(value => {
     console.log(value.data)
+}).catch(reason => {
+    console.log(reason)
 })
