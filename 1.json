@@ -1,0 +1,28 @@
+{
+  "app": "com.supwisdom.lypt",
+  "duration": "1382ms",
+  "headers": {
+    "Host": "bpa.lypt.edu.cn",
+    "Connection": "keep-alive",
+    "Content-Length": "905",
+    "User-Agent": "Mozilla/5.0 (Linux; Android 8.0.0; XT1789-05 Build/OCX27.138-29; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/87.0.4280.66 Mobile Safari/537.36 SuperApp",
+    "X-Requested-With": "XMLHttpRequest",
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Accept": "*/*",
+    "Origin": "https://bpa.lypt.edu.cn",
+    "Sec-Fetch-Site": "same-origin",
+    "Sec-Fetch-Mode": "cors",
+    "Sec-Fetch-Dest": "empty",
+    "Referer": "https://bpa.lypt.edu.cn/xgh5/stu/bpa/yq_info.html?2Ocb69p5vi8q6wW9vrdL6hhIs5QluhWe6wvWsapA23GftaIT+qq0I0FTAxvAyb0q",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept-Language": "zh-CN,zh;q\u003d0.9,en-US;q\u003d0.8,en;q\u003d0.7,zh-TW;q\u003d0.6,zh-HK;q\u003d0.5",
+    "Cookie": "userToken\u003deyJhbGciOiJSUzUxMiJ9.eyJBVFRSX3VzZXJObyI6IjZkZThkNTUxMDAxOTExZWIwZTA5NTlmOGU0NTU1MDFkIiwic3ViIjoiMjAxNzIzMTA2MjUiLCJpc3MiOiJ0b2tlbi5seXB0LmVkdS5jbiIsImRldmljZUlkIjoiWDhIcktKRFFZNE1EQVBVTkRLUDZtQlZUIiwiQVRUUl9pZGVudGl0eVR5cGVJZCI6IjNlMzQ3MmEwMTc3MTExZWIwZTA5NTlmOGU0NTU1MDFkIiwiQVRUUl9hY2NvdW50SWQiOiJjNmEzNDljMDE3NzMxMWViMGUwOTU5ZjhlNDU1NTAxZCIsIkFUVFJfdXNlcklkIjoiNmRlOGQ1NTAwMDE5MTFlYjBlMDk1OWY4ZTQ1NTUwMWQiLCJBVFRSX2lkZW50aXR5VHlwZUNvZGUiOiJTMDIiLCJBVFRSX2lkZW50aXR5VHlwZU5hbWUiOiLlrabnlJ8iLCJBVFRSX29yZ2FuaXphdGlvbk5hbWUiOiLkv6Hmga_mioDmnK_kuI7ln47lu7rlrabpmaIiLCJBVFRSX3VzZXJOYW1lIjoi6Z-m5oiQ5oiQIiwiZXhwIjoxNjA5MTM2MjY4LCJBVFRSX29yZ2FuaXphdGlvbklkIjoiMDciLCJpYXQiOjE2MDY1NDQyNjgsImp0aSI6IklkLVRva2VuLXJDVHFkMk5ITlNLV29vdjYiLCJyZXEiOiJjb20uc3Vwd2lzZG9tLmx5cHQiLCJBVFRSX29yZ2FuaXphdGlvbkNvZGUiOiIwNyJ9.gAtP5yuSLtSIvWlrjo2t1O0cROda2r1w_lzuri-WtymZbuWbNMhEfy6k64d5P9ZdMcTl4Lhmpfa0kHdWDbnrdV1pc2SbllDAxXuPCxIrEPxdnQGLf23xP6zPmOeIcA81ooW7In1lfo5WYH0tdZ8wQ0itav-UQP9Q21bL2Qu8e0dAckEP5eIhQceACiXPnUyIJA3h2wbvrnRz6ryXvTzonGpMDBquTz6WPJDsEI-zzUYEsbIi1HOg7L31MwXULPf9qU0aECtPzJ2efdbWz4ieCDmHQtSeb5IGxejBdtmvkruzpLoUItF1tq2wpcOgbOA_w4XbVqvyaHg0OrhuT5OfQA; Domain\u003d.lypt.edu.cn; Path\u003d/"
+  },
+  "method": "POST",
+  "protocol": "HTTP/1.1",
+  "remoteIp": "42.247.20.136",
+  "remotePort": 443,
+  "sessionId": "0f1ff102-7e4f-498f-98c0-2c36e20d794d",
+  "time": "2020-11-28 14:18:38",
+  "url": "https://bpa.lypt.edu.cn/xgh5/openData"
+}

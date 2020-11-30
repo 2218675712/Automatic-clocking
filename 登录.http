@@ -1,0 +1,5 @@
+
+#登录已经完成
+POST https://token.lypt.edu.cn/password/passwordLogin?username=20172310625&password=22186Xiuluo&appId=com.supwisdom.lypt&geo=&deviceId=X8JEvx1rGBYDAPUNDKOOzb4B&osType=android&clientId=%3F%60m9af532ma1%3C94ccb%3Bbb233f7%60gc88%3A
+
+Content-Type: application/json
