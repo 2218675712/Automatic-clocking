@@ -4,7 +4,6 @@
 // 例子：
 // (new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423
 // (new Date()).Format("yyyy-M-d h:m:s.S") ==> 2006-7-2 8:9:4.18
-
 Date.prototype.Format = function (fmt) { // author: meizz
     var o = {
         "M+": this.getMonth() + 1, // 月份
@@ -25,76 +24,103 @@ Date.prototype.Format = function (fmt) { // author: meizz
 const nowDate = new Date().Format("yyyy-MM-dd");
 
 
-const axios = require('axios');
+const axios = require('axios').default;
 
-let result;
-axios({
-    method: 'post',
-    url: 'https://bpa.lypt.edu.cn/xgh5/openData',
-    headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    params: {
-        command: "XGXT",
-        param: {
-            "cmd": "yqsbFormSave",
-            "xh": "20172310625",
-            "sbsj": nowDate,
-            "nl": "18",
-            "lxfs": "15847195490",
-            "jzdq": "0379",
-            "jzdq_xxdz": "家",
-            "tw": "36.5",
-            "sflx": "0",
-            "jcbr": "0",
-            "zyzz": "1,",
-            "fbrq": "",
-            "zyzzms": "",
-            "bz": "",
-            "bz1": "",
-            "wcjtgj": "",
-            "wcjtgjxq": "",
-            "wcdq": "",
-            "wcdqxxdz": "",
-            "lkdate": "",
-            "fhdate": "",
-            "zszt": "",
-            "ylzd1": "",
-            "qrblxqdz": "",
-            "qrbltjdz": "",
-            "jcdq": "",
-            "jcxxdz": "",
-            "jcsj": "",
-            "qzsj": "",
-            "zlyy": "",
-            "zysj": "",
-            "token": "2za30YpAZNtiONIfQ+TyJA"
-        }
-
-    }
-}).then(value => {
-    result = value.data
-    console.log(value.data)
-    pushInfo();
-}).catch(reason => {
-    result = reason
-    console.log(reason)
-    pushInfo();
-
-})
-
-function pushInfo() {
-    axios({
+//默认超时时间
+axios.defaults.timeout = 10000;
+//默认重试次数
+axios.defaults.retry = 3;
+//默认间隔时间
+axios.defaults.retryDelay = 1000;
+var result1;
+(async function AutoClock() {
+    await axios({
         method: 'post',
-        url: 'https://sc.ftqq.com/SCU51861T9b1350506cfcf9586f40e00252b66ceb5ce174da23773.send',
+        url: 'https://bpa.lypt.edu.cn/xgh5/openData',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36'
+        },
         params: {
-            text: '打卡信息',
-            desp: result
+            command: "XGXT",
+            param: {
+                "cmd": "yqsbFormSave",
+                "xh": "20172310625",
+                "sbsj": nowDate,
+                "nl": "18",
+                "lxfs": "15847195490",
+                "jzdq": "0379",
+                "jzdq_xxdz": "家",
+                "tw": "36.5",
+                "sflx": "0",
+                "jcbr": "0",
+                "zyzz": "1,",
+                "fbrq": "",
+                "zyzzms": "",
+                "bz": "",
+                "bz1": "",
+                "wcjtgj": "",
+                "wcjtgjxq": "",
+                "wcdq": "",
+                "wcdqxxdz": "",
+                "lkdate": "",
+                "fhdate": "",
+                "zszt": "",
+                "ylzd1": "",
+                "qrblxqdz": "",
+                "qrbltjdz": "",
+                "jcdq": "",
+                "jcxxdz": "",
+                "jcsj": "",
+                "qzsj": "",
+                "zlyy": "",
+                "zysj": "",
+                "token": "2za30YpAZNtiONIfQ+TyJA"
+            }
+
         }
     }).then(value => {
-        console.log('推送成功')
-    }).catch(reason => {
-        console.log('推送失败')
+        result1 = value.data
+    }).catch(e => {
+        result1 = e.data
+        console.log(e)
     })
+    await axios({
+        method: 'post',
+        url: 'https://api.nextrt.com/api/push/send',
+        data: {
+            title: '打卡信息',
+            content: `
+                data:${result1.data}
+                message:${result1.message}
+                result:${result1.result}
+                `,
+            type: "Telegram",
+            token: '582bb60c95544f75198b6de1fbe74258'
+        }
+    }).then(res => {
+        console.log(res.data)
+    }).catch(e => {
+        console.log(e.data)
+    })
+    console.log(result1)
+    await axios({
+        method: 'post',
+        url: 'https://api.nextrt.com/api/push/send',
+        data: {
+            title: '打卡信息',
+            content: `
+                data:${result1.data}
+                message:${result1.message}
+                result:${result1.result}
+                `,
+            type: "Email",
+            token: '582bb60c95544f75198b6de1fbe74258'
+        }
+    }).then(res => {
+        console.log(res.data)
+    }).catch(e => {
+        console.log(e.data)
+    })
+}())
 
-}
